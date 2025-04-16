@@ -11,10 +11,10 @@ body {
   height: 100vh;
 }
 
-.container, .login-box, .payment-box {
+.container, .login-box{
   background-color: #2f2f3a;
   border-radius: 10px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   max-width: 400px;
   width: 90%;
@@ -43,9 +43,9 @@ a.button:hover, button:hover {
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 8px 0;
-  border-radius: 5px;
+  border-radius: 7px;
   border: none;
 }

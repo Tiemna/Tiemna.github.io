@@ -18,7 +18,7 @@
 
   <script>
     document.getElementById('loginForm').addEventListener('submit', function (e) {
-      e.preventDefault();
+      e.preventDefault(); //flag(Client-side)
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       const params = new URLSearchParams(window.location.search);
