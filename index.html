@@ -4,20 +4,45 @@
   <meta charset="UTF-8">
   <title>Welcome</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    a.button {
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
       display: inline-block;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    a.button {
+      display: block;
+      margin: 10px auto;
       padding: 10px 20px;
       background: #3498db;
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      width: 250px;
+    }
+    a.button.secure {
+      background: #27ae60;
+    }
+    a.button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to the Demo App</h1>
-  <p>This is a public page. Click below to log in.</p>
-  <a class="button" href="/login.html?redirect=dashboard.html">Login</a>
+  <div class="container">
+    <h1>Open redirect</h1>
+    <p>Choose a login method:</p>
+
+    <!-- Insecure version -->
+    <a class="button" href="/login.html?redirect=dashboard.html">🔓 Vulnerable Login</a>
+
+    <!-- Secure version -->
+    <a class="button secure" href="/secure-login.html?redirect=dashboard.html">🔒 Secure Login</a>
+  </div>
 </body>
 </html>
