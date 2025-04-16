@@ -1,22 +1,23 @@
+<?php
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (auth($_POST['email'], $_POST['password'])){
+        header('Location: '.$_POST['redirect_url']);
+    } else {
+        header("Location: /login.php?error=Incorrect%20Login.");
+    }
+} else {
+?>
 
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Přihlášení</title>
-</head>
-<body>
-    <h2>Přihlášení</h2>
+<form>
+<form method="post">
+    Email: <input type="text" name="email"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="hidden" name="redirect_url" value="<?= (isset($_GET["redirect_url"]) ? htmlspecialchars($_GET["redirect_url"]) : "/login.php"); ?>">
+    <button type="submit" formmethod="post" formaction="/login.php">Submit</button>
+</form>
 
-    <?php if (!empty($error)): ?>
-        <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
-    <?php endif; ?>
+<?php
+}
 
-    <form method="POST" action="login.php?<?php echo htmlspecialchars($_SERVER['QUERY_STRING']); ?>">
-        <label>Uživatel: <input type="text" name="username"></label><br><br>
-        <label>Heslo: <input type="password" name="password"></label><br><br>
-        <input type="submit" value="Přihlásit se">
-    </form>
-</body>
-</html>
+?>
