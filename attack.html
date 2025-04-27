@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Payment Gateway</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Complete Your Payment</h2>
+  <div class="payment-box">
+    <form id="attackForm">
+      <input type="text" placeholder="Card Number" required>
+      <input type="text" placeholder="Cardholder Name" required>
+      <input type="text" placeholder="Expiration Date" required>
+      <input type="text" placeholder="CVV" required>
+      <button type="submit">Pay Now</button>
+      <p hidden>flag(redirect)></p>
+    </form>
+    <p id="result" style="margin-top: 20px;"></p>
+  </div>
+
+  <script>
+    document.getElementById('attackForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('result').textContent = "❌ Sorry, there was a problem processing your payment.";
+    });
+  </script>
+</body>
+</html>
