@@ -1,2 +1,2 @@
 # tiemna.github.io
- Webpage hopefully
+ Simple page for demonstrating open redirect 
